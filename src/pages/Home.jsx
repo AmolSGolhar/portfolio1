@@ -7,27 +7,27 @@ import Bird from '../models/Bird'
 import Sky from '../models/Sky'
 import Plane from '../models/Plane'
 import Homeinfo from '../components/Homeinfo'
-import Calm from '../assets/Calm.mp3'; 
+//import Calm from '../assets/Calm.mp3'; 
 
 import { soundoff, soundon } from '../assets/icons'
 
 const Home = () => {
-  const audioRef = useRef(new Audio(Calm));
-  audioRef.current.volume=0.4;
-  audioRef.current.loop=true;
+  //const audioRef = useRef(new Audio(Calm));
+ // audioRef.current.volume=0.4;
+  //audioRef.current.loop=true;
   const [isRotating, setIsRotating]= useState(false);
   const [currentStage,setCurrentStage]=useState(1);
-  const [isPlayingMusic, setisPlayingMusic]=useState(false);
+  //const [isPlayingMusic, setisPlayingMusic]=useState(false);
 
-  useEffect(() => {
-    if(isPlayingMusic)
-    {
-      audioRef.current.play();
-    }
-    return() => {
-      audioRef.current.pause();
-    }
-  },[isPlayingMusic])
+ // useEffect(() => {
+   // if(isPlayingMusic)
+    //{
+      //audioRef.current.play();
+   // }
+    //return() => {
+      //audioRef.current.pause();
+    //}
+  //},[isPlayingMusic])
   const adjustIslandForScreenSize = () =>{
     let screenScale = null;
     let screenPosition = [0, -6.5,-43];
@@ -101,10 +101,10 @@ const Home = () => {
 
      <div className='absolute bottom-2 left-2'>
       <img
-        src={!isPlayingMusic ? soundoff : soundon}
+        //src={!isPlayingMusic ? soundoff : soundon}
         alt='sound'
         className='w-10 h-10 cursor-pointer object-contain'
-        onClick={() => setisPlayingMusic(!isPlayingMusic)}
+        //onClick={() => setisPlayingMusic(!isPlayingMusic)}
       />
 
      </div>
